@@ -48,3 +48,19 @@ I combined Row and Column with Expanded to arrange all nine family members. I al
 
 
 
+
+## Phase 4: Refactoring to a GridView Architecture
+
+**Compare building a 3x3 grid using nested Row/Column with Expanded versus GridView.count. What are the trade-offs between constraint control, code simplicity, and flexibility?**
+
+Using Row and Column with Expanded gives me more direct control over how the available width and height are divided. However, it requires more nested widgets, which can make the code harder to read as the layout becomes more complicated.
+
+GridView.count simplifies the layout because I can specify three columns and provide the nine BradyTile widgets directly. Flutter handles the arrangement of the grid cells instead of requiring me to create separate Rows.
+
+I used LayoutBuilder to calculate the cell aspect ratio so all three rows could fit within the available screen height. I also used NeverScrollableScrollPhysics to prevent the grid from scrolling.
+
+For this project, GridView.count makes the code easier to organize, while the Row and Column approach helped me better understand how Flutter passes constraints between widgets.
+
+**Challenges:**
+
+I refactored the nested Row and Column layout into GridView.count while keeping my reusable BradyTile widget. I still need to verify the final layout in Chrome because of the earlier Flutter file-permission issue.

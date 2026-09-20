@@ -21,77 +21,51 @@ class BradyBunchApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
         ),
-        body: Column(
-          children: [
-            // Top row
-            Expanded(
-              child: Row(
-                children: const [
-                  Expanded(
-                    child: BradyTile(
-                      imagePath: 'assets/images/greg.jpg',
-                    ),
-                  ),
-                  Expanded(
-                    child: BradyTile(
-                      imagePath: 'assets/images/marcia.jpg',
-                    ),
-                  ),
-                  Expanded(
-                    child: BradyTile(
-                      imagePath: 'assets/images/peter.jpg',
-                    ),
-                  ),
-                ],
-              ),
-            ),
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            final cellWidth = constraints.maxWidth / 3;
+            final cellHeight = constraints.maxHeight / 3;
 
-            // Middle row
-            Expanded(
-              child: Row(
-                children: const [
-                  Expanded(
-                    child: BradyTile(
-                      imagePath: 'assets/images/cindy.jpg',
-                    ),
-                  ),
-                  Expanded(
-                    child: BradyTile(
-                      imagePath: 'assets/images/alice.jpg',
-                    ),
-                  ),
-                  Expanded(
-                    child: BradyTile(
-                      imagePath: 'assets/images/bobby.jpg',
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            return GridView.count(
+              crossAxisCount: 3,
 
-            // Bottom row
-            Expanded(
-              child: Row(
-                children: const [
-                  Expanded(
-                    child: BradyTile(
-                      imagePath: 'assets/images/mike.jpg',
-                    ),
-                  ),
-                  Expanded(
-                    child: BradyTile(
-                      imagePath: 'assets/images/carol.jpg',
-                    ),
-                  ),
-                  Expanded(
-                    child: BradyTile(
-                      imagePath: 'assets/images/jan.jpg',
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+              // Size each cell to fit three rows on screen.
+              childAspectRatio: cellWidth / cellHeight,
+
+              // Keep all nine portraits visible at once.
+              physics: const NeverScrollableScrollPhysics(),
+
+              children: const [
+                BradyTile(
+                  imagePath: 'assets/images/greg.jpg',
+                ),
+                BradyTile(
+                  imagePath: 'assets/images/marcia.jpg',
+                ),
+                BradyTile(
+                  imagePath: 'assets/images/peter.jpg',
+                ),
+                BradyTile(
+                  imagePath: 'assets/images/cindy.jpg',
+                ),
+                BradyTile(
+                  imagePath: 'assets/images/alice.jpg',
+                ),
+                BradyTile(
+                  imagePath: 'assets/images/bobby.jpg',
+                ),
+                BradyTile(
+                  imagePath: 'assets/images/mike.jpg',
+                ),
+                BradyTile(
+                  imagePath: 'assets/images/carol.jpg',
+                ),
+                BradyTile(
+                  imagePath: 'assets/images/jan.jpg',
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
