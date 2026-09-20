@@ -21,26 +21,77 @@ class BradyBunchApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
         ),
-        body: const Center(
-          child: Row(
-            children: [
-              Expanded(
-                child: BradyTile(
-                  imagePath: 'assets/images/greg.jpg',
-                ),
+        body: Column(
+          children: [
+            // Top row
+            Expanded(
+              child: Row(
+                children: const [
+                  Expanded(
+                    child: BradyTile(
+                      imagePath: 'assets/images/greg.jpg',
+                    ),
+                  ),
+                  Expanded(
+                    child: BradyTile(
+                      imagePath: 'assets/images/marcia.jpg',
+                    ),
+                  ),
+                  Expanded(
+                    child: BradyTile(
+                      imagePath: 'assets/images/peter.jpg',
+                    ),
+                  ),
+                ],
               ),
-              Expanded(
-                child: BradyTile(
-                  imagePath: 'assets/images/marcia.jpg',
-                ),
+            ),
+
+            // Middle row
+            Expanded(
+              child: Row(
+                children: const [
+                  Expanded(
+                    child: BradyTile(
+                      imagePath: 'assets/images/cindy.jpg',
+                    ),
+                  ),
+                  Expanded(
+                    child: BradyTile(
+                      imagePath: 'assets/images/alice.jpg',
+                    ),
+                  ),
+                  Expanded(
+                    child: BradyTile(
+                      imagePath: 'assets/images/bobby.jpg',
+                    ),
+                  ),
+                ],
               ),
-              Expanded(
-                child: BradyTile(
-                  imagePath: 'assets/images/peter.jpg',
-                ),
+            ),
+
+            // Bottom row
+            Expanded(
+              child: Row(
+                children: const [
+                  Expanded(
+                    child: BradyTile(
+                      imagePath: 'assets/images/mike.jpg',
+                    ),
+                  ),
+                  Expanded(
+                    child: BradyTile(
+                      imagePath: 'assets/images/carol.jpg',
+                    ),
+                  ),
+                  Expanded(
+                    child: BradyTile(
+                      imagePath: 'assets/images/jan.jpg',
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
