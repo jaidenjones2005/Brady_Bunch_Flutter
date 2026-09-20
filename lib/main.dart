@@ -22,12 +22,24 @@ class BradyBunchApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
         body: const Center(
-          child: SizedBox(
-            width: 200,
-            height: 200,
-            child: BradyTile(
-              imagePath: 'assets/images/alice.jpg',
-            ),
+          child: Row(
+            children: [
+              Expanded(
+                child: BradyTile(
+                  imagePath: 'assets/images/greg.jpg',
+                ),
+              ),
+              Expanded(
+                child: BradyTile(
+                  imagePath: 'assets/images/marcia.jpg',
+                ),
+              ),
+              Expanded(
+                child: BradyTile(
+                  imagePath: 'assets/images/peter.jpg',
+                ),
+              ),
+            ],
           ),
         ),
       ),
